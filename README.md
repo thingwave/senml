@@ -12,6 +12,12 @@ Install using
 ```
 go get github.com/thingwave/senml-go
 ```
+Then import with
+```
+import (
+	"github.com/thingwave/senml-go"
+)
+```
 
 ## Future work
 Future work includes:
