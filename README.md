@@ -7,6 +7,12 @@ SenML was developed as an XML and JSON based data format for sensor data. Later 
 ## Features
 Current features include  Golang struct and data type that can capture all features in SenML.
 
+## Installation
+Install using
+'''
+go get github.com/thingwave/senml
+'''
+
 ## Future work
 Future work includes:
  * JSON to Go validation
