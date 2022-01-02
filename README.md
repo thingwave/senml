@@ -15,7 +15,7 @@ go get github.com/thingwave/senml-go
 Then import with
 ```
 import (
-	"github.com/thingwave/senml-go"
+  senml "github.com/thingwave/senml-go"
 )
 ```
 
