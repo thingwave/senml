@@ -15,8 +15,18 @@ go get github.com/thingwave/senml-go
 Then import with
 ```
 import (
+  "encoding/json"
   senml "github.com/thingwave/senml-go"
 )
+```
+
+
+To, use, create a SenMLMessage as an array of SenMLRecords
+```
+smlMsg := make([]senml.SenMLRecord, 0)
+head := senml.SenMLRecord{Bn: "urn:dev:mac:abcd1234:", N: "33303/0/5700", "V": 23.1}
+smlMsg = append(smlMsg, head)
+jsonData, _ := json.Marshal(smlMsg)
 ```
 
 ## Future work
