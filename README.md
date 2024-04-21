@@ -28,7 +28,12 @@ var bver int16 = 5
 head := senml.SenMLRecord{Bn: "urn:dev:mac:abcd1234:", Bver: &bver, Bt: float64(time.Now().UnixMilli)/1000.0, N: "3303/0/5700", "V": 23.1}
 hum := senml.SenMLRecord{"N": "3304/0/5700", V: 42"
 smlMsg = append(smlMsg, head)
-jsonData, _ := json.Marshal(smlMsg)
+jsonData, err := json.Marshal(smlMsg)
+if err == nil {
+  
+  // do something with the message, like send over MQTT, save to file or database, etc.
+
+}
 ```
 
 ## Future work
