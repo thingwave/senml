@@ -25,7 +25,7 @@ import (
 
 To, use, create a SenMLMessage as an array of SenMLRecords (example has OMA LwM2M records for temperature of 23.1 degrees and humidity of 42%)
 ```
-smlMsg := make([]senml.SenMLRecord, 0)
+smlMsg := make(senml.SenMLMessage, 0)
 var bver int16 = 5
 head := senml.SenMLRecord{Bn: "urn:dev:mac:abcd1234:", Bver: &bver, Bt: float64(time.Now().UnixMilli())/1000.0, N: "3303/0/5700", V: 23.1}
 hum := senml.SenMLRecord{N: "3304/0/5700", V: 42}
