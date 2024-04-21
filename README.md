@@ -1,5 +1,5 @@
 # ThingWave SenML module for Golang
-This is a Golang module for the JSON-based SenML sensor data format.
+This is a Golang module for the JSON-based SenML sensor data format. This module is compatible with IPSO Smart Objects, OMA LwM2M, and Eclipse Arrowhead usage.
 
 ## Introduction
 SenML was developed as an XML and JSON based data format for sensor data. Later CBOR was added as well.
@@ -21,10 +21,12 @@ import (
 ```
 
 
-To, use, create a SenMLMessage as an array of SenMLRecords
+To, use, create a SenMLMessage as an array of SenMLRecords (example has OMA LwM2M records for temperature and humidity)
 ```
 smlMsg := make([]senml.SenMLRecord, 0)
-head := senml.SenMLRecord{Bn: "urn:dev:mac:abcd1234:", N: "33303/0/5700", "V": 23.1}
+var bver int16 = 5
+head := senml.SenMLRecord{Bn: "urn:dev:mac:abcd1234:", Bver: &bver, Bt: float64(time.Now().UnixMilli)/1000.0, N: "3303/0/5700", "V": 23.1}
+hum := senml.SenMLRecord{"N": "3304/0/5700", V: 42"
 smlMsg = append(smlMsg, head)
 jsonData, _ := json.Marshal(smlMsg)
 ```
